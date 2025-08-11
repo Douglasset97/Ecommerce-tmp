@@ -1,5 +1,5 @@
 import pytest
-from src.validar import validar_voucher
+from ecommerce import validar_voucher
 
 def test_valor_minimo():
     assert validar_voucher(50.00) is True
