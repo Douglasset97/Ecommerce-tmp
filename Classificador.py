@@ -1,11 +1,21 @@
 # arquivo: classificador.py
 
-def classificar_nota(valor):
-    """Classifica um Valor numérico de 50 a 500."""
-    if nota > 500 or nota < 0:
+def validar_voucher(valor: float) -> bool:
+    """
+    Verifica se um valor de compra é elegível para um voucher.
+    Válido para valores entre 50.00 e 500.00 (inclusive).
+    """
+    return 50.00 <= valor <= 500.00
+
+def classificar_nota(valor: float) -> str:
+    """
+    Classifica um valor numérico entre 0 e 500.
+    Usa a função validar_voucher para verificar elegibilidade.
+    """
+    if valor < 0 or valor > 500:
         return "Nota inválida"
 
-    if nota >= 50:
+    if validar_voucher(valor):
         return "Aprovado"
     else:
         return "Reprovado"
